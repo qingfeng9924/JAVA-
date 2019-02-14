@@ -1,4 +1,4 @@
-package com.spring.ci.euraka.kafka;
+package com.spring.ci.kafka;
 
 import lombok.Data;
 

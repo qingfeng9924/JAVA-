@@ -1,7 +1,6 @@
-package com.spring.ci.euraka.kafka;
+package com.spring.ci.kafka;
 
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.support.hsf.HSFJSONUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
