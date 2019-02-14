@@ -10,9 +10,6 @@ package com.java.design.model.factory;
  * @Company :
  **/
 public class CarFactory {
-    public static void main(String []args){
-        createCar("BWM");
-    }
 
     public static Car createCar(String carName){
         Car car = null;
