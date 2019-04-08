@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(value = "com.spring.ci.euraka.*")
+@ComponentScan(value = {"com.spring.ci.*"})
 public class DemoApplication {
 
 	public static void main(String[] args) {

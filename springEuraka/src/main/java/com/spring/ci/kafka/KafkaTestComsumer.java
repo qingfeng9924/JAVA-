@@ -7,6 +7,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Description:
@@ -23,13 +24,23 @@ public class KafkaTestComsumer {
     @Autowired
     private KafkaTemplate kafkaTemplate;
 
-    @KafkaListener(topics = {"test"})
+    @KafkaListener(topics = {"test"},groupId="1")
     public void listen(ConsumerRecord<?,?> consumerRecord){
         Optional<?> kafkaMessage = Optional.ofNullable(consumerRecord.value());
         if(kafkaMessage.isPresent()){
             //得到Optional实例中的值
             Object message = kafkaMessage.get();
-            System.err.println("消费消息:"+message);
+            System.out.println("消费消息1:"+message);
+        }
+    }
+
+    @KafkaListener(topics = {"test"},groupId = "2")
+    public void listens(ConsumerRecord<?,?> consumerRecord){
+        Optional<?> kafkaMessage = Optional.ofNullable(consumerRecord.value());
+        if(kafkaMessage.isPresent()){
+            //得到Optional实例中的值
+            Object message = kafkaMessage.get();
+            System.err.println("消费消息2:"+message);
         }
     }
 }

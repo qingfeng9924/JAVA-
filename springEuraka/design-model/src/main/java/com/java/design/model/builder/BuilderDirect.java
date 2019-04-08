@@ -10,7 +10,9 @@ package com.java.design.model.builder;
  * @Company :
  **/
 public class BuilderDirect {
+
     public PersionBuilder persionBuilder;
+
     public BuilderDirect(PersionBuilder persionBuilder){
         this.persionBuilder = persionBuilder;
     }
